@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>.:Propiedades Públicas:.</title>
+</head>
+<body>
+  <script>
+
+    function persona(dni, nombre)
+    {
+      var edad = 0;
+
+      this.dni = dni;
+      this.nombre = nombre;
+      this._edad = 0;
+
+      //Metodos que acceden a la propiedad Privada Aqui.
+
+    }
+
+    var yo = new persona('2323', 'Carlos');
+    console.log(yo._edad);
+
+
+  </script>
+
+</body>
+</html>

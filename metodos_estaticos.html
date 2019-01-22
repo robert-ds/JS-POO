@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>.:Propiedades Públicas:.</title>
+</head>
+<body>
+    <script>
+
+    console.log(Math.PI);
+
+    function Convertidor()
+    {
+
+    }
+    Convertidor.GRADOS_A_RADIANES = Math.PI/180;
+    Convertidor.RADIANES_A_GRADOS = 180/Math.PI;
+
+    Convertidor.aRadianes = function(grados)
+    {
+      return grados * Convertidor.GRADOS_A_RADIANES;
+    }
+
+    Convertidor.aGrados = function(radianes)
+    {
+      return radianes * Convertidor.RADIANES_A_GRADOS;
+    }
+
+    console.log('270 grados son: '+ Convertidor.aRadianes(270) +' Radianes');
+    console.log('PI Radianes son: '+ Convertidor.aGrados(Math.PI)+' Grados');
+
+
+
+    </script>
+
+</body>
+</html>

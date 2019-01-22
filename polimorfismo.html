@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>.:Polimorfismo:.</title>
+</head>
+<body>
+      <script src="JS/miapp.js"></script>
+      <script src="JS/pantalla.js"></script>
+      <script src="JS/pantalla_menu.js"></script>
+      <script src="JS/pantalla_detalle.js"></script>
+
+      <script>
+        var app = new MiApp();
+        app.inicializar();
+
+        console.log(app);
+        console.log(app.pantallaActual);
+
+        app.actualizarPantalla( MiApp.PANTALLA_DETALLE);
+        console.log(app.pantallaActual);
+      </script>
+
+</body>
+</html>

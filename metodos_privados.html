@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>.:Metodos Privados:.</title>
+</head>
+<body>
+    <script>
+          function persona(dni, nombre)
+          {
+            var _this = this;
+            var edad = 0;
+            var edadParaSaludar = 1;
+            this.dni = dni;
+            this.nombre = nombre;
+
+            //Metodos que accedan a las propiedades o métodos privados aquí
+
+            function envejecer()
+            {
+              edad++;
+              if(edad >= edadParaSaludar)
+              {
+                _this.saludar('Robert');
+              }
+            }
+
+            persona.prototype.crecer = function()
+            {
+              envejecer();
+            }
+
+          }
+
+          persona.prototype.saludar = function(nombre)
+          {
+            console.log(this.nombre + ' te saluda '+ nombre);
+          }
+
+
+          var yo = new persona('1' , 'Marcos');
+          console.log(yo.edad);
+          //Devuelve undefined ya que la edad no se encuentra en el objeto
+          //al no estar declarada en el this
+
+          yo.saludar('Pepito');
+          yo.crecer();
+
+    </script>
+
+</body>
+</html>

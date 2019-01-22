@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>::Herencia::</title>
+</head>
+<body>
+<script>
+
+      function Persona(dni, nombre)
+      {
+        this.dni = dni;
+        this.nombre = nombre;
+      }
+
+      Persona.prototype.saludar = function()
+      {
+        console.log('Hola me Llamo '+this.nombre);
+      }
+
+
+      function Estudiante(dni, nombre, numeroMatricula)
+      {
+        Persona.prototype.constructor.call(this, dni, nombre);
+        this.numeroMatricula = numeroMatricula;
+      }
+      Estudiante.prototype = new Persona();
+
+
+      Estudiante.prototype.estudiar = function()
+      {
+        console.log('Estudiando.....');
+      }
+
+      var yo = new Estudiante('007', 'Robert', '20');
+      yo.saludar();
+      yo.estudiar();
+      console.log(yo);
+
+
+
+</script>
+
+
+</body>
+</html>
